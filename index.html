@@ -198,7 +198,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-05-17 22:55:46 / Modified: 23:23:11" itemprop="dateCreated datePublished" datetime="2020-05-17T22:55:46+08:00">2020-05-17</time>
+              <time title="Created: 2020-05-17 22:55:46 / Modified: 23:31:24" itemprop="dateCreated datePublished" datetime="2020-05-17T22:55:46+08:00">2020-05-17</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -250,7 +250,37 @@
 <p>​            <a href="https://baijiahao.baidu.com/s?id=1604347607947449668&amp;wfr=spider&amp;for=pc" target="_blank" rel="noopener">https://baijiahao.baidu.com/s?id=1604347607947449668&amp;wfr=spider&amp;for=pc</a></p>
 </blockquote>
 <h2 id="Windows下右键新建-md文件"><a href="#Windows下右键新建-md文件" class="headerlink" title="Windows下右键新建.md文件"></a>Windows下右键新建.md文件</h2><blockquote>
-<p>参考：<a href="https://stepneverstop.github.io/win-rightclick-create-md.html" target="_blank" rel="noopener">https://stepneverstop.github.io/win-rightclick-create-md.html</a></p>
+<p>转载自：<a href="https://stepneverstop.github.io/win-rightclick-create-md.html" target="_blank" rel="noopener">https://stepneverstop.github.io/win-rightclick-create-md.html</a></p>
+</blockquote>
+<blockquote>
+<h3 id="打开注册表"><a href="#打开注册表" class="headerlink" title="打开注册表"></a>打开注册表</h3><ol>
+<li><code>CMD+R</code>，打开运行对话框</li>
+<li>输入<code>regedit</code>，打开注册表编辑器</li>
+</ol>
+<h3 id="修改注册表"><a href="#修改注册表" class="headerlink" title="修改注册表"></a>修改注册表</h3><ol>
+<li>在<code>计算机&gt;HKEY_CLASSES_ROOT</code>右键查找，输入<code>Typora</code>，勾选项，取消勾选值和数据</li>
+</ol>
+<p><a href="https://stepneverstop.github.io/win-rightclick-create-md/20181229103503.png" target="_blank" rel="noopener"><img src="https://stepneverstop.github.io/win-rightclick-create-md/20181229103503.png" alt="img"></a></p>
+<ol start="2">
+<li>确认运行的程序名字，我的电脑如图所示，运行文件是<code>Typora.exe</code></li>
+</ol>
+<p><a href="https://stepneverstop.github.io/win-rightclick-create-md/20181229103752.png" target="_blank" rel="noopener"><img src="https://stepneverstop.github.io/win-rightclick-create-md/20181229103752.png" alt="img"></a><br>如果使用的是markdownpad或者其他编辑器，同理</p>
+<ol start="3">
+<li><p>在磁盘任意位置新建一个文件，后缀为<code>.reg</code></p>
+</li>
+<li><p>打开编辑刚刚创建好的注册表文件，写入以下内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Windows Registry Editor Version 5.00[HKEY_CLASSES_ROOT\.md]@&#x3D;&quot;Typora.exe&quot;[HKEY_CLASSES_ROOT\.md\ShellNew]&quot;NullFile&quot;&#x3D;&quot;&quot;[HKEY_CLASSES_ROOT\Typora.exe]@&#x3D;&quot;Markdown&quot;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@&#x3D;&quot;Typora.exe&quot;&#96; 代表的是指定.md文件的运行程序</span><br><span class="line">&#96;@&#x3D;&quot;Markdown&quot;&#96; 代表的是右键时默认的文件名字，这样写新建为&#96;新建Markdown.md&#96;文件，而且右键菜单中显示&#96;MarkDown</span><br></pre></td></tr></table></figure>
+
+<p>编辑好之后,另存为,设置如图所示:</p>
+<p><a href="https://stepneverstop.github.io/win-rightclick-create-md/20181229105408.png" target="_blank" rel="noopener"><img src="https://stepneverstop.github.io/win-rightclick-create-md/20181229105408.png" alt="img"></a></p>
+<p>文件名可以随便设置，但是后缀必须是<code>.reg</code>文件,保存类型一定要是<code>文本文档(*.txt)</code>,编码选择<code>Unicode</code>,非常重要!!!!!</p>
+<ol start="5">
+<li>保存文件后,双击运行,修改注册表即可,现在右键即可达到预期效果,如果不行,请重启一下.</li>
+</ol>
 </blockquote>
 
       
