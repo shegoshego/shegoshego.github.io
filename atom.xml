@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-22T05:22:52.458Z</updated>
+  <updated>2020-05-17T15:23:11.705Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,20 +17,47 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>The beginning</title>
-    <link href="http://yoursite.com/2020/03/21/The-beginning/"/>
-    <id>http://yoursite.com/2020/03/21/The-beginning/</id>
-    <published>2020-03-21T14:12:05.000Z</published>
-    <updated>2020-03-22T05:22:52.458Z</updated>
+    <title>Windows右键菜单的一些有的没的</title>
+    <link href="http://yoursite.com/2020/05/17/win-rightclick/"/>
+    <id>http://yoursite.com/2020/05/17/win-rightclick/</id>
+    <published>2020-05-17T14:55:46.000Z</published>
+    <updated>2020-05-17T15:23:11.705Z</updated>
     
-    <content type="html"><![CDATA[<p>记录NIXEYGRAM的搭建相关.</p><h3 id="常用文档"><a href="#常用文档" class="headerlink" title="常用文档"></a>常用文档</h3><p><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/</a> Hexo文档</p><p><a href="http://theme-next.iissnan.com/" target="_blank" rel="noopener">http://theme-next.iissnan.com/</a> NexT使用文档</p><p><a href="https://git-scm.com/book/zh/v2" target="_blank" rel="noopener">https://git-scm.com/book/zh/v2</a> Git官方文档</p><p><a href="http://www.baidu.com/link?url=CCFeE1pww-3Ul95mPAZ8nxYhtVxLUL7yjF5Vu6sBxcFOXyLYnenaaYS89OS799hk9VFdKrtdWdsviEGHzw62Nq&wd=&eqid=da03f6090009ae72000000055e761d75" target="_blank" rel="noopener"><em>Git</em> 基本操作 | 菜鸟教程</a></p><p><a href="https://www.baidu.com/link?url=3geB4lvePqcqwDDxY2Vc8wQ0weUmGa6EfWuH_zoAwjSW9ANFIbzCSud6_qryDKO2x4UlqUAZEDGTjJYYJ-OxH_&wd=&eqid=8393ef25000b5ed3000000055e76247e" target="_blank" rel="noopener"><em>Markdown</em> 教程 | 菜鸟教程</a></p><h3 id="搭建过程"><a href="#搭建过程" class="headerlink" title="搭建过程"></a>搭建过程</h3><h6 id=""><a href="#" class="headerlink" title=""></a></h6>]]></content>
+    <content type="html"><![CDATA[<p>今天开始重新学java来着，然后记录一下今天学到的有的没的：</p><h2 id="Win10系统下-按住SHIFT再点右键出现的“在此处打开Powershell‘’怎么改成“在此处打开命令提示符”"><a href="#Win10系统下-按住SHIFT再点右键出现的“在此处打开Powershell‘’怎么改成“在此处打开命令提示符”" class="headerlink" title="Win10系统下,按住SHIFT再点右键出现的“在此处打开Powershell‘’怎么改成“在此处打开命令提示符”"></a>Win10系统下,按住SHIFT再点右键出现的“在此处打开Powershell‘’怎么改成“在此处打开命令提示符”</h2><ol><li><p>win+R打开运行对话框，输入regedit，回车，打开注册表编辑器。</p></li><li><p>定位如下</p></li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">计算机\HKEY_CLASSES_ROOT\Directory\Background\shell\cmd</span><br></pre></td></tr></table></figure><p>​    右侧窗口中的“HideBasedOnVelocityId”项，右键点击此项，选择“重命名“，将其重命名为ShowBasedOnVelocityId，保存退出注册表编辑器。</p><p>​    *如果重命名时提示“注册表编辑器无法重命名HideBasedOnVelocityId。重命名值时出现错误”，需右键点击左边的cmd，更改相应的管理员权限就可以了。</p><p><strong>*注册表无法编辑，更改所有者权限方法</strong></p><ol><li><p>首先，我们需要先确定是哪一项注册表项无法编辑，然后<strong>右键该项，选择“权限”，打开其权限窗口</strong>。</p></li><li><p>在里面点击<strong>“高级”</strong>选项，会弹出<strong>“Network的高级安全设置”</strong>的窗口。</p></li><li><p>在<strong>“所有者：TrustedInstaller”</strong>一栏，点击<strong>“更改”</strong>，会弹出<strong>“选择用户或组”</strong>的窗口。</p></li><li><p>在<strong>“输入要选择的对象名称”</strong>的框内，<strong>输入你登陆系统的用户名，再点“检测名称”</strong>，确保输入的用户名是正确的。(这次用的是“Administrators”)</p></li><li><p>然后，一步步点击确定，最后回到最早打开的注册表项权限窗口，<strong>选中“Administrators”，勾上“完全控制”的权限</strong>，点确定就行了。</p></li></ol><blockquote><p>参考：<a href="https://blog.csdn.net/u010098138/article/details/86079584" target="_blank" rel="noopener">https://blog.csdn.net/u010098138/article/details/86079584</a></p><p>​            <a href="https://baijiahao.baidu.com/s?id=1604347607947449668&amp;wfr=spider&amp;for=pc" target="_blank" rel="noopener">https://baijiahao.baidu.com/s?id=1604347607947449668&amp;wfr=spider&amp;for=pc</a></p></blockquote><h2 id="Windows下右键新建-md文件"><a href="#Windows下右键新建-md文件" class="headerlink" title="Windows下右键新建.md文件"></a>Windows下右键新建.md文件</h2><blockquote><p>参考：<a href="https://stepneverstop.github.io/win-rightclick-create-md.html" target="_blank" rel="noopener">https://stepneverstop.github.io/win-rightclick-create-md.html</a></p></blockquote>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;记录NIXEYGRAM的搭建相关.&lt;/p&gt;
-&lt;h3 id=&quot;常用文档&quot;&gt;&lt;a href=&quot;#常用文档&quot; class=&quot;headerlink&quot; title=&quot;常用文档&quot;&gt;&lt;/a&gt;常用文档&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://hexo.io/zh-cn/docs/&quot;
+        &lt;p&gt;今天开始重新学java来着，然后记录一下今天学到的有的没的：&lt;/p&gt;
+&lt;h2 id=&quot;Win10系统下-按住SHIFT再点右键出现的“在此处打开Powershell‘’怎么改成“在此处打开命令提示符”&quot;&gt;&lt;a href=&quot;#Win10系统下-按住SHIFT再点右键出现的“在
+      
+    
+    </summary>
+    
+    
+      <category term="Sundries" scheme="http://yoursite.com/categories/Sundries/"/>
+    
+    
+      <category term="Tips" scheme="http://yoursite.com/tags/Tips/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>The beginning</title>
+    <link href="http://yoursite.com/2020/03/21/The-beginning/"/>
+    <id>http://yoursite.com/2020/03/21/The-beginning/</id>
+    <published>2020-03-21T14:12:05.000Z</published>
+    <updated>2020-05-17T14:45:30.015Z</updated>
+    
+    <content type="html"><![CDATA[<p>NIXEYGRAM的搭建相关.</p><h3 id="常用文档"><a href="#常用文档" class="headerlink" title="常用文档"></a>常用文档</h3><p><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/</a> Hexo文档</p><p><a href="http://theme-next.iissnan.com/" target="_blank" rel="noopener">http://theme-next.iissnan.com/</a> NexT使用文档</p><p><a href="https://git-scm.com/book/zh/v2" target="_blank" rel="noopener">https://git-scm.com/book/zh/v2</a> Git官方文档</p><p><a href="http://www.baidu.com/link?url=CCFeE1pww-3Ul95mPAZ8nxYhtVxLUL7yjF5Vu6sBxcFOXyLYnenaaYS89OS799hk9VFdKrtdWdsviEGHzw62Nq&wd=&eqid=da03f6090009ae72000000055e761d75" target="_blank" rel="noopener"><em>Git</em> 基本操作 | 菜鸟教程</a></p><p>[<em>Markdown</em> 教程 | 菜鸟教程</p><h6 id=""><a href="#" class="headerlink" title=""></a></h6>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;NIXEYGRAM的搭建相关.&lt;/p&gt;
+&lt;h3 id=&quot;常用文档&quot;&gt;&lt;a href=&quot;#常用文档&quot; class=&quot;headerlink&quot; title=&quot;常用文档&quot;&gt;&lt;/a&gt;常用文档&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://hexo.io/zh-cn/docs/&quot; t
       
     
     </summary>
